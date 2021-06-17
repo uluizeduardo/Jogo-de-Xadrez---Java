@@ -15,7 +15,7 @@ public class PartidaDeXadrez {//Essa Classe é responsável pelas regras do jogo
         inicioDoJogo();
     }
 
-    //Método que retorna uma matriz de PecaDeXadrez correspondente a essa partida
+    //Método que retorna uma matriz do tipo PecaDeXadrez correspondente a essa partida
     public PecaDeXadrez[][] getPecas(){
         PecaDeXadrez[][] mat = new PecaDeXadrez[tabuleiro.getLinhas()][tabuleiro.getColunas()];
         for (int i = 0; i < tabuleiro.getLinhas(); i++) {
@@ -30,5 +30,6 @@ public class PartidaDeXadrez {//Essa Classe é responsável pelas regras do jogo
     private void inicioDoJogo(){
         tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
         tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
+        tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(7, 4));
     }
 }
