@@ -16,6 +16,7 @@ public class UI {
         System.out.println("  a b c d e f g h");
     }
 
+    //Método auxiliar que imprime apenas uma peça de xadrez
     private static void printPeca(PecaDeXadrez peca){
         if (peca == null){
             System.out.print("-");

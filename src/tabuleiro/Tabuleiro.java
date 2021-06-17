@@ -34,4 +34,10 @@ public class Tabuleiro {
     public Peca peca(Posicao posicao){
         return pecas[posicao.getLinha()][posicao.getColuna()];
     }
+
+    //Método responsável por colocar a peça na posição do tabuleiro
+    public void colocarPeca(Peca peca, Posicao posicao){
+        pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+        peca.posicao = posicao;
+    }
 }
