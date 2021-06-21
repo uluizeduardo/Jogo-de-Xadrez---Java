@@ -26,10 +26,14 @@ public class PartidaDeXadrez {//Essa Classe é responsável pelas regras do jogo
         return mat;
     }
 
+    private void colocarNovaPeca(char coluna, int linha, PecaDeXadrez peca){
+        tabuleiro.colocarPeca(peca, new PosicaoDoXadrez(coluna, linha).toPosicao());//.toPosicao para converter para uma posição da matriz
+    }
+
     //Método responsável por iniciar a partida de xadrez, colocando as peças no tabuleiro
     private void inicioDoJogo(){
-        tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.BRANCO), new Posicao(2, 1));
-        tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(0, 4));
-        tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.PRETO), new Posicao(7, 4));
+        colocarNovaPeca('b', 6, new Torre(tabuleiro, Cor.BRANCO));
+        colocarNovaPeca('e', 8, new Rei(tabuleiro, Cor.PRETO));
+        colocarNovaPeca('e', 1, new Rei(tabuleiro, Cor.PRETO));
     }
 }
