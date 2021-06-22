@@ -38,6 +38,22 @@ public class Tabuleiro {
         return pecas[posicao.getLinha()][posicao.getColuna()];
     }
 
+    //Método para remover peça do tabuleiro
+    public Peca removePeca(Posicao posicao){
+        if(!posicaoExistente(posicao)){
+            throw new TabuleiroException("Posição não existe no tabuleiro");
+        }
+        if (peca(posicao) == null){
+            return null;
+        }
+
+        Peca aux = peca(posicao);
+        aux.posicao = null;
+        pecas[posicao.getLinha()][posicao.getColuna()] = null;
+        return aux;
+    }
+
+
     //Método responsável por colocar a peça na posição do tabuleiro
     public void colocarPeca(Peca peca, Posicao posicao){
         if (temUmaPeca(posicao)) {//Se tem uma peça nessa posição, lançar exception
